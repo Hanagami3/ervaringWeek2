@@ -1,0 +1,89 @@
+package be.intecbrussel.model.user;
+
+import java.time.LocalDate;
+
+public abstract class User {
+    private int userId;
+    private String firstName;
+    private String lastName;
+    private String emailId;
+    private String password;
+    private int birthYear;
+    private static LocalDate dateOfJoiningLibrary;
+
+    public User(){}
+    public User(String firstName, String lastName, String emailId, String password, int birthYear) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailId = emailId;
+        this.password = password;
+        this.birthYear = birthYear;
+        dateOfJoiningLibrary = LocalDate.now();
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    public LocalDate getDateOfJoiningLibrary() {
+        return dateOfJoiningLibrary;
+    }
+
+    public void setDateOfJoiningLibrary(LocalDate dateOfJoiningLibrary) {
+        User.dateOfJoiningLibrary = dateOfJoiningLibrary;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "  userId  " + userId +
+                "  First Name " + firstName +
+                "  last Name  " + lastName  +
+                "  emailId"   + emailId  +
+                " password   " + password ;
+    }
+}

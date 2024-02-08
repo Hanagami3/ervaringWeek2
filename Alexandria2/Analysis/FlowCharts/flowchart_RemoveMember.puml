@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+: the admin request to remove a member;
+: the user provide a name;
+if (name is already in the system) then (no)
+    :error message;
+    end;
+else(yes)
+    : remove member to system;
+    stop
+
+
+@enduml
