@@ -1,0 +1,34 @@
+@startuml
+
+start
+split
+:a member requests to get all his info;
+:System retrieves all the info van the member;
+:System returns all the info van the member;
+stop;
+
+split again
+:admin provides a member by name or id;
+if(admin inputs name) then (yes)
+    :system retrieves member by name;
+    if(is the member found) then (yes);
+            if (is there more than 1 member) then (yes);
+                :error too many member;
+                end;
+            else (no)
+            endif
+       else(no)
+            :error no member found;
+            end;
+       endif
+else(no, uses id)
+    :system retrieves member by id;
+    if (is the member found) then (yes)
+    else (no)
+        :error no member found;
+        end;
+    endif;
+endif
+:return the found member;
+stop
+@enduml
