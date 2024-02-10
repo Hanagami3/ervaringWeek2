@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+: the user provide a new member;
+if (name is already in the system) then (yes)
+    :error message;
+    end;
+else(no)
+    : set info to new member;
+    : add new member to system;
+    stop
+
+
+@enduml
