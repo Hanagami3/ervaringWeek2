@@ -1,0 +1,7 @@
+@startuml
+start;
+:get list of all members;
+:sort list of all members by date of joining;
+:return list of all members by date of joining;
+stop
+@enduml
