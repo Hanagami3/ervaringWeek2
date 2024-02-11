@@ -1,0 +1,34 @@
+@startuml
+
+User -> LibraryApp : input naam of idNumber
+LibraryApp -> UserService : removeMember()
+
+alt with name
+    UserService -> UserRepository : removeMember(Sting firstName, String LastName)
+    UserRepository -> UserRepository : removeMember(User user)
+        alt not in the system
+            UserService <- UserRepository : error
+            LibraryApp <- UserService : error
+            User <- LibraryApp: error message
+        else in de system
+            UserService <- UserRepository : true
+            LibraryApp <- UserService : true
+            User <- LibraryApp: ok message
+        end
+
+else with ID
+    UserService -> UserRepository : removeMember(int idNumber)
+    UserRepository -> UserRepository : removeMember(User: user)
+        alt not in the system
+            UserService <- UserRepository : error
+            LibraryApp <- UserService : error
+            User <- LibraryApp: error message
+        else in de system
+            UserService <- UserRepository : true
+            LibraryApp <- UserService : true
+            User <- LibraryApp: ok message
+        end
+end
+@enduml
+
+

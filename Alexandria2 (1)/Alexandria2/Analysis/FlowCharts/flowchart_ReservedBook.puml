@@ -1,0 +1,19 @@
+@startuml
+
+start
+
+:a member provides a book;
+if(is the book found) then (yes);
+    if(the book is already reserved) then (yes);
+        :reserved the book;
+        stop
+    else(no)
+        :message the book is already reserved;
+        stop
+    endif
+else(no)
+    :error no book found;
+    end
+
+
+@enduml
